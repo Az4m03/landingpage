@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Data from the index</h2>
+
+<img src="{% static 'crm/img/1.jpg' %}" height="300">
+
+{% include 'index_old.html' %}
+
+{% endblock %}

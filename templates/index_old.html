@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form action="{% url 'thanks_page' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send</button>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+{% if object_list %}
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Date</th>
+    </tr>
+    {% for object in object_list %}
+    <tr>
+        <th>{{ object.id }}</th>
+        <th>{{ object.order_name }}</th>
+        <th>{{ object.order_phone }}</th>
+        <th>{{ object.order_dt }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>Objects not exist</h1>
+{% endif %}
+</body>
+</html>
